@@ -1,0 +1,50 @@
+Alabama,495,310,25,25
+Alaska,209,429,25,25
+Arizona,150,281,25,25
+Arkansas,410,274,25,25
+California,51,216,25,25
+Colorado,245,205,25,25
+Connecticut,687,141,25,25
+Delaware,670,196,25,25
+Florida,584,380,25,25
+Georgia,544,306,25,25
+Hawaii,507,455,25,25
+Idaho,137,110,25,25
+Illinois,445,193,25,25
+Indiana,482,185,25,25
+Iowa,398,163,25,25
+Kansas,315,211,25,25
+Kentucky,514,222,25,25
+Louisiana,415,336,25,25
+Maine,677,51,25,25
+Maryland,668,227,25,25
+Massachusetts,686,81,25,25
+Michigan,494,122,25,25
+Minnesota,383,83,25,25
+Mississippi,450,300,25,25
+Missouri,410,226,25,25
+Montana,195,70,25,25
+Nebraska,315,167,25,25
+Nevada,101,168,25,25
+New Hampshire,638,14,25,25
+New Jersey,675,173,25,25
+New Mexico,218,282,25,25
+New York,603,121,25,25
+North Carolina,601,248,25,25
+North Dakota,315,68,25,25
+Ohio,520,175,25,25
+Oklahoma,356,274,25,25
+Oregon,67,93,25,25
+Pennsylvania,580,153,25,25
+Rhode Island,685,109,25,25
+South Carolina,578,282,25,25
+South Dakota,318,118,25,25
+Tennessee,491,255,25,25
+Texas,305,336,25,25
+Utah,162,190,25,25
+Vermont,598,27,25,25
+Virginia,595,213,25,25
+Washington,86,30,25,25
+West Virginia,548,200,25,25
+Wisconsin,433,120,25,25
+Wyoming,226,134,25,25
