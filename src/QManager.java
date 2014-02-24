@@ -2,6 +2,8 @@ import java.util.ArrayList;
 
 import javax.swing.*;
 
+
+
 /**
  * QManager manages the current question and score
  * 

@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -7,6 +6,8 @@ import java.io.*;
 import java.util.Scanner;
 
 import javax.imageio.*;
+
+
 
 /** 
 	Geopanel is a class that extends JPanel and implements ActionListener. It prints out the image of the blank map and holds all of the information about each of the 		states. It sets up the buttons for each of the states and sends QManager the user's input.

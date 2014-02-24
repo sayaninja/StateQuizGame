@@ -11,6 +11,7 @@ import java.awt.event.*;
  * @author Zhansaya Abdikarimova
  */
 
+
 public class GUI {
 
 	private Geopanel geo; // geo is a Geopanel reference
