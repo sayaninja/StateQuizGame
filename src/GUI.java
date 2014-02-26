@@ -14,7 +14,7 @@ import java.awt.event.*;
 
 public class GUI {
 
-	private Geopanel geo; // geo is a Geopanel reference
+	private MapPanel geo; // geo is a MapPanel reference
 	private JFrame frame;
 	private JTextArea text;
 	private Font ourFont;
@@ -23,7 +23,7 @@ public class GUI {
 	public GUI() {
 
 		ourFont = new Font("Arial", Font.PLAIN, 24);
-		geo = new Geopanel();
+		geo = new MapPanel();
 
 		text = new JTextArea(4, 20);
 		text.setLineWrap(true);
@@ -72,9 +72,9 @@ public class GUI {
 	}
 
 	/**
-	 * Returns the Geopanel geo.
+	 * Returns the MapPanel geo.
 	 */
-	public Geopanel getGeopanel() {
+	public MapPanel getMapPanel() {
 		return this.geo;
 	}
 }

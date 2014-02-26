@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -8,19 +9,20 @@ public class JustCheck {
 
 	/**
 	 * @param args
-	 * @throws FileNotFoundException 
+	 * @throws Exception 
 	 */
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) throws Exception {
 		File fileName = new File("States.txt");  
-	    Scanner inFile = new Scanner(fileName);  
+	    Country c = new Country();
+	    c.addStates(50, fileName);
+	    ArrayList<State> stet = new ArrayList<State>();
 	    
-	    String line = inFile.nextLine();
-		System.out.println(line);
+	    stet = c.getStatesArray();
 	    
-	        
-	      
-	        
-	    inFile.close();  
+	    for(int i=0;i<50;i++)
+	    	System.out.println(stet.get(i).toString());
+	    
+	     
 	}
 
 }
