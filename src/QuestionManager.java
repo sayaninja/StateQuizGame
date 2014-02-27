@@ -74,13 +74,11 @@ public class QuestionManager {
 	public void askNextQuestion() {
 		
 		if(!randStateIndexes.isEmpty()){
-			geomain.getGUI().setText("Click on: " + states.get(currentQuestion).getName() + "\n");
+			geomain.getGUI().setQuestionTextArea("Click on: " + states.get(currentQuestion).getName() + "\n");
 			geo.setAnswer(geo.stateButtons[currentQuestion]);
 		}
 		else
-			geomain.getGUI().setText("You're finished! Yay!");
-		
-		
+			geomain.getGUI().setQuestionTextArea("You're finished! Yay!");
 	}
 
 	/**
@@ -93,20 +91,21 @@ public class QuestionManager {
 		JButton answer = (JButton) o;
 
 		if (answer == geo.stateButtons[currentQuestion]) {
-			geomain.getGUI().setText("Congrats! ");
+			geomain.getGUI().setQuestionTextArea("Congrats! ");
+			geomain.getGUI().setAnswerTextArea(states.get(currentQuestion).getName());
+			
 			correctStates.add(states.get(currentQuestion));
-			//System.out.println(stateNames[currentQuestion]);
+			
 			randStateIndexes.remove(randIndex);
 			randIndex = (int) (Math.random() * (randStateIndexes.size()-1));
 			currentQuestion = randStateIndexes.get(randIndex);
-			
 			currentScore++;
 		} else {
 			
-			geomain.getGUI().setText("Nope! ");
+			geomain.getGUI().setQuestionTextArea("Nope! ");
 		}
 
-		geomain.getGUI().setText(
+		geomain.getGUI().setQuestionTextArea(
 				"Your current score is: " + currentScore + "\n");
 		this.askNextQuestion();
 	}

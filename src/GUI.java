@@ -16,36 +16,54 @@ public class GUI {
 
 	private MapPanel geo; // geo is a MapPanel reference
 	private JFrame frame;
-	private JTextArea text;
+	private JTextArea questionTextArea; // text area on bottom where question displays
+	private JScrollPane questionScrollPane;
+	private JTextArea answerTextArea; // text area on right for correct answers
+	private JScrollPane answerScrollPane;
 	private Font ourFont;
-	private JScrollPane scroll;
+	
+	
 
 	public GUI() {
-
 		ourFont = new Font("Arial", Font.PLAIN, 24);
 		geo = new MapPanel();
+		
+		//Setting up the text area to display questions
+		questionTextArea = new JTextArea(4, 20);
+		questionTextArea.setLineWrap(true);	
 
-		text = new JTextArea(4, 20);
-		text.setLineWrap(true);
-
-		scroll = new JScrollPane(text);
-		scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scroll.getVerticalScrollBar().addAdjustmentListener(new AdjustmentListener() {  
+		questionScrollPane = new JScrollPane(questionTextArea);
+		questionScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		questionScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		questionScrollPane.getVerticalScrollBar().addAdjustmentListener(new AdjustmentListener() {  
 	        public void adjustmentValueChanged(AdjustmentEvent e) {  
 	            e.getAdjustable().setValue(e.getAdjustable().getMaximum());  
 	        }
 	    });
 
-		text.setFont(ourFont);
-		text.append("Welcome to the USA map quiz!\n");
-		text.setEditable(false);
+		questionTextArea.setFont(ourFont);
+		questionTextArea.append("Welcome to the USA map quiz!\n");
+		questionTextArea.setEditable(false);
+		
+		//Set up text area to display answers
+		answerTextArea = new JTextArea(20,10);
+		answerTextArea.setLineWrap(true);
+		answerScrollPane = new JScrollPane(answerTextArea);
+		answerScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		answerScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);	
+		answerTextArea.setFont(ourFont);
+		answerTextArea.append("Correct Answers:\n");
+		answerTextArea.setEditable(false);
+		
+		
+		
 		frame = new JFrame();
 
-		frame.setSize(713, 639);
+		frame.setSize(940, 685);
 		frame.setTitle("You think you know all US states?");
 		frame.getContentPane().add(BorderLayout.CENTER, geo);
-		frame.getContentPane().add(BorderLayout.SOUTH, scroll);
+		frame.getContentPane().add(BorderLayout.SOUTH, questionScrollPane);
+		frame.getContentPane().add(BorderLayout.EAST, answerScrollPane);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocation(20, 40);
 		frame.setResizable(false);
@@ -56,19 +74,31 @@ public class GUI {
 	}
 
 	/**
-	 * Returns the text in the TextArea.
+	 * Returns the text in the questionTextArea.
 	 */
-
-	public JTextArea getTextArea() {
-		return this.text;
+	public JTextArea getQuestionTextArea() {
+		return this.questionTextArea;
 	}
 
 	/**
-	 * Adds text to the TextArea.
+	 * Adds text to the questionTextArea.
 	 */
+	public void setQuestionTextArea(String txt) {
+		this.questionTextArea.append(txt);
+	}
+	
+	/**
+	 * Returns the text in the answerTextArea.
+	 */
+	public JTextArea getAnswerTextArea() {
+		return this.answerTextArea;
+	}
 
-	public void setText(String txt) {
-		this.text.append(txt);
+	/**
+	 * Adds text to the answerTextArea.
+	 */
+	public void setAnswerTextArea(String txt) {
+		this.answerTextArea.append(txt + "\n");
 	}
 
 	/**
