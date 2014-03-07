@@ -11,7 +11,9 @@ This is a state quiz that currently tests knowledge about locations of states an
 
 ## Documentation
 
-First program reads data in `Country` about country’s states’ names, their capitals, and locations of buttons on every state for choosing them. All the data is in `States.txt` file. As you can see, in the constructor, every Country object has its name, capital and list of its states. 
+First when the quiz-game starts, it askes if user wants to be tested with states locations or their capital locations. The initila pages is in `QuizFrontPage` class. 
+
+The program reads data in `Country` about country’s states’ names, their capitals, and locations of buttons on every state for choosing them. All the data is in `States.txt` file. As you can see, in the constructor, every Country object has its name, capital and list of its states. 
 ```java
 public Country(){
 	states = new ArrayList<State>();
