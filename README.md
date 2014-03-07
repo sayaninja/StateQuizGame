@@ -15,7 +15,7 @@ First when the quiz-game starts, it askes if user wants to be tested with states
 
 The program reads data in `Country` class. It reades country’s states’ names, their capitals, and locations of buttons on every state to select them from `States.txt` file. Here is the format of the file:
 
-```txt
+```
 Alabama,Montgomery,495,310
 ```
 
