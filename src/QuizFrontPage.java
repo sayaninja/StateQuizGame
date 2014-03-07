@@ -26,7 +26,7 @@ import javax.imageio.*;
 		
  		
  		try{
-	    	map = ImageIO.read(getClass().getClassLoader().getResource("image/front.jpg"));
+	    	map = ImageIO.read(getClass().getClassLoader().getResource("front.jpg"));
 		} catch(IOException ie){}
 		this.repaint();
  		
