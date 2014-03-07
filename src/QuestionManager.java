@@ -1,8 +1,5 @@
 import java.util.ArrayList;
-
 import javax.swing.*;
-
-
 
 /**
  * QuestionManager manages the current question and score
@@ -14,7 +11,7 @@ import javax.swing.*;
 
 public class QuestionManager {
 	private GUI gui;
-	private MapPanel geo;
+	private GamePanel geo;
 	
 	private int currentQuestion;
 	private int currentScore;
@@ -32,37 +29,27 @@ public class QuestionManager {
 	 */
 
 	public QuestionManager() {
-
 		states = new ArrayList<State>(); 
-		
-		
-		
-
 	}
 
 	/**
 	 * Sets the current question and score to zero and then asks the first
 	 * question. Also gets the GUI and MapPanel from geomain.
 	 */
-
 	public void init() {
 		correctStates = new ArrayList<State>();
 		randStateIndexes = new ArrayList<Integer>();
-		
-		
-		
-		
 		gui = geomain.getGUI();
-		geo = gui.getMapPanel();
+		geo = gui.getGamePanel();
 		states = geo.getCountry().getStatesArray();
+		
 		for(int i=0;i<states.size();i++){
 			randStateIndexes.add(i);
-			
 		}
+		
 		randIndex = (int) (Math.random() * states.size());
 		currentQuestion = randStateIndexes.get(randIndex);
 		currentScore = 0;
-
 		this.askNextQuestion();
 	}
 
@@ -72,7 +59,6 @@ public class QuestionManager {
 	 */
 
 	public void askNextQuestion() {
-		
 		if(!randStateIndexes.isEmpty()){
 			geomain.getGUI().setQuestionTextArea("Click on: " + states.get(currentQuestion).getName() + "\n");
 			geo.setAnswer(geo.stateButtons[currentQuestion]);
@@ -109,13 +95,5 @@ public class QuestionManager {
 				"Your current score is: " + currentScore + "\n");
 		this.askNextQuestion();
 	}
-
-	/**
-	 * Sets the name of the state.
-	 */
-
 	
-	
-	
-
 }
