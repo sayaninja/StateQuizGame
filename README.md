@@ -19,7 +19,7 @@ public Country(){
 	states = new ArrayList<State>();
 	this.name = null;
 	this.capital = null;
-    }
+}
 ``` 
 Below there is a method that reads all the information about the country from a file
 ```java
@@ -39,22 +39,23 @@ public void addStates(int numberOfStates, File file) throws Exception {
 	    states.add(new State(splitted[0],splitted[1],x,y));
 	    
 	}
-    }
+ }
 ```
 * The `State` class stores information about each state of particular country
+
 ```java
 public State(String name, String capital, int x, int y){
-		this.name = name;
-		this.capital = capital;
-		this.xCoord = x;
-		this.yCoord = y;
+	this.name = name;
+	this.capital = capital;
+	this.xCoord = x;
+	this.yCoord = y;
 }
 ```
 
 * The `GamePanel` class contains the main panel of the game. It has three main parts:
--- the map of the country with colored states and buttons on them
--- questions scroll bar
--- correct answers scroll bar  
+	- the map of the country with colored states and buttons on them
+	- questions scroll bar
+	- correct answers scroll bar  
 
 * The `QuestionManager` class has the basic logic for running the quiz. It stores list of states and their capitals, generates random indexes for questions, and asks questions until all of the states asked. 
 
